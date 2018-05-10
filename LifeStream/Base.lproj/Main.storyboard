@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BEj-zV-zcy">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movies View Controller-->
+        <scene sceneID="c2E-Xz-6yy">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xR3-na-wB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <collectionViewController id="RrF-vk-AIu" customClass="VTMoviesViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="g0x-EY-Qjy">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4Ya-NY-2cA">
+                            <size key="itemSize" width="412" height="360"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviesCollectionViewCell" id="T45-uV-x7Y" customClass="VTMoviesCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="412" height="360"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="412" height="360"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_image" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-pX-tVB">
+                                            <rect key="frame" x="20" y="20" width="372" height="320"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yKE-pX-tVB" secondAttribute="trailing" constant="20" id="Obz-e0-ubO"/>
+                                    <constraint firstAttribute="bottom" secondItem="yKE-pX-tVB" secondAttribute="bottom" constant="20" id="WEZ-iN-vpL"/>
+                                    <constraint firstItem="yKE-pX-tVB" firstAttribute="leading" secondItem="T45-uV-x7Y" secondAttribute="leading" constant="20" id="gTR-Cv-gHQ"/>
+                                    <constraint firstItem="yKE-pX-tVB" firstAttribute="top" secondItem="T45-uV-x7Y" secondAttribute="top" constant="20" id="rc4-0S-xrX"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="movieSmallPosterImageView" destination="yKE-pX-tVB" id="hcL-fQ-buH"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="RrF-vk-AIu" id="DUl-cx-vuD"/>
+                            <outlet property="delegate" destination="RrF-vk-AIu" id="sO9-KF-Qdl"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="8Ug-jt-vGA"/>
+                </collectionViewController>
+            </objects>
+            <point key="canvasLocation" x="4173" y="-1088"/>
+        </scene>
+        <!--Movie Description View Controller-->
+        <scene sceneID="Qrb-aN-itw">
+            <objects>
+                <viewController storyboardIdentifier="VTMovieDescriptionViewController" id="gcz-WH-R4u" customClass="VTMovieDescriptionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qpN-98-5TG"/>
+                        <viewControllerLayoutGuide type="bottom" id="W8f-GE-LGm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wtc-0X-4s5">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_image" translatesAutoresizingMaskIntoConstraints="NO" id="dIo-YY-4Xl">
+                                <rect key="frame" x="110" y="60" width="800" height="800"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="800" id="3Va-S3-SQJ"/>
+                                    <constraint firstAttribute="height" constant="800" id="8xF-Q1-bwX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mn-as-7ah">
+                                <rect key="frame" x="918" y="60" width="892" height="60"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9A-f4-C5X">
+                                <rect key="frame" x="930" y="136" width="880" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="cI5-En-tR3">
+                                <rect key="frame" x="478" y="428" width="64" height="64"/>
+                                <color key="color" red="0.098039215690000001" green="0.46274509800000002" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dIo-YY-4Xl" firstAttribute="top" secondItem="qpN-98-5TG" secondAttribute="bottom" id="3NZ-n0-TyG"/>
+                            <constraint firstItem="b9A-f4-C5X" firstAttribute="top" secondItem="3Mn-as-7ah" secondAttribute="bottom" constant="16" id="4rG-EJ-xRE"/>
+                            <constraint firstItem="cI5-En-tR3" firstAttribute="centerY" secondItem="dIo-YY-4Xl" secondAttribute="centerY" id="5hk-hd-XJb"/>
+                            <constraint firstItem="cI5-En-tR3" firstAttribute="centerX" secondItem="dIo-YY-4Xl" secondAttribute="centerX" id="6tZ-x5-Tdo"/>
+                            <constraint firstItem="6J7-X4-Z1K" firstAttribute="trailing" secondItem="b9A-f4-C5X" secondAttribute="trailing" constant="20" id="74b-Na-lmZ"/>
+                            <constraint firstItem="dIo-YY-4Xl" firstAttribute="leading" secondItem="6J7-X4-Z1K" secondAttribute="leading" constant="20" id="NtM-zo-AKb"/>
+                            <constraint firstItem="3Mn-as-7ah" firstAttribute="top" secondItem="dIo-YY-4Xl" secondAttribute="top" id="Vsf-zL-MXL"/>
+                            <constraint firstItem="3Mn-as-7ah" firstAttribute="leading" secondItem="dIo-YY-4Xl" secondAttribute="trailing" constant="8" id="YTU-tQ-ewS"/>
+                            <constraint firstItem="6J7-X4-Z1K" firstAttribute="trailing" secondItem="3Mn-as-7ah" secondAttribute="trailing" constant="20" id="y0b-sU-hKf"/>
+                            <constraint firstItem="b9A-f4-C5X" firstAttribute="leading" secondItem="dIo-YY-4Xl" secondAttribute="trailing" constant="20" id="ztZ-Q3-1vl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6J7-X4-Z1K"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="cI5-En-tR3" id="H7S-SK-mJE"/>
+                        <outlet property="movieBigPosterImageView" destination="dIo-YY-4Xl" id="LUv-Ae-fr9"/>
+                        <outlet property="movieDescriptionLabel" destination="b9A-f4-C5X" id="vKQ-Ny-vb5"/>
+                        <outlet property="movieTitlelabel" destination="3Mn-as-7ah" id="XNt-6A-AlJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q77-ps-wWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6417" y="-1088"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i11-fQ-AOu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BEj-zV-zcy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ClJ-xZ-v8m">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RrF-vk-AIu" kind="relationship" relationship="rootViewController" id="kMy-m8-8YS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deU-yS-iC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="-1088"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="No_image" width="200" height="200"/>
+    </resources>
+</document>
